@@ -23,7 +23,11 @@ const {
 
 /* http://localhost:3000/score */
 /* Get Scores by Game ID */
-
+router.get("/", (req, res) => {
+  res.json({
+    message: "Welcome to scores API",
+  });
+});
 router.get("/:gameId", async (req, res, next) => {
   const { gameId } = req.params;
   console.log(req.params);
