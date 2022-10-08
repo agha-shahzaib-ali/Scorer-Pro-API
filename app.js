@@ -1,6 +1,7 @@
 const createError = require("http-errors");
 const express = require("express");
 // const path = require("path");
+const cors = require("cors");
 
 const logger = require("morgan");
 
@@ -8,7 +9,8 @@ const routes = require("./routes/index.js");
 const { error } = require("console");
 
 const app = express();
-
+//Using cors
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
